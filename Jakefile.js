@@ -8,6 +8,11 @@
 
 	//**** General Purpose Tasks
 
+	desc("Start the Karma server (run this first)");
+	task("karma", function() {
+		console.log("Starting Karma server");
+	});
+
 	desc("Default build");
 	task("default", ["version", "Lint"], function() {
 		console.log("\n\nBUILD OK");
@@ -17,6 +22,8 @@
 	task("run", function() {
 		jake.exec("node node_modules/http-server/bin/http-server src", {interactive: true}, complete);
 	});
+
+
 
 	//**** Supporting Tasks
 
