@@ -8,7 +8,7 @@
 	var karma = require("simplebuild-karma");
 	var KARMA_CONFIG = "karma.conf.js";
 	var DIST_DIR = "generated/dist";
-	var shell = require("shell");
+	var shell = require("shelljs");
 
 	//**** General Purpose Tasks
 
@@ -78,6 +78,7 @@
 	desc("Build distribution directory");
 	task("build", [DIST_DIR], function() {
 		console.log("Building distribution directory:");
+		shell.cp("src/index.html", DIST_DIR);
 	});
 
 	directory(DIST_DIR);
