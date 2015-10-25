@@ -8,6 +8,7 @@
 	var karma = require("simplebuild-karma");
 	var KARMA_CONFIG = "karma.conf.js";
 	var DIST_DIR = "generated/dist";
+	var shell = require("shell");
 
 	//**** General Purpose Tasks
 
@@ -32,6 +33,7 @@
 	desc("Erase all generated files");
 	task("clean", function() {
 		console.log("Erasing generated files: .");
+		shell.rm("-rf", "generated");
 	});
 
 	//**** Supporting Tasks
